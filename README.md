@@ -14,7 +14,7 @@ $ npm install webpack-dev-server -g
 ```
 
 ## Getting it up and running
-Now [Webpack](http://webpack.github.io) is installed you can fork this repository. Next install dependencies:
+Now [Webpack](http://webpack.github.io) is installed you can fork this repository. Check it out and install dependencies:
 ``` bash
 $ npm install
 ```
