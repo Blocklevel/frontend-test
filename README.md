@@ -23,10 +23,10 @@ Now all dependencies are installed you can run a dev server and show us your fro
 ``` bash
 $ webpack-dev-server
 ```
-The above command will provide a development server which you can see at [http://localhost:8080](http://localhost:8080).
+The above command will provide a development server which you can run at [http://localhost:8080](http://localhost:8080).
 
 ## Show your skills
-We've set up a PSD with a simple single page app which can be found in the root of this repository.
+We've set up a PSD with a simple single page app which can be downloaded [here](http://dev.hoasting.net/_frontend-test/blocklevel-frontend-test.psb). Webfonts can be downloaded [here](http://dev.hoasting.net/_frontend-test/fonts.zip)
 
 Keep in mind everything provided in the PSD must be implemented in your test. You are free to add as much awesomeness as you want.
 
