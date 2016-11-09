@@ -23,6 +23,7 @@ Now all dependencies are installed you can run a dev server and show us your fro
 ``` bash
 $ webpack-dev-server
 ```
+The above command will provide a development server which you can see at http://localhost:8080.
 
 ## Show your skills
 We've set up a PSD with a simple single page app which can be found in the root of this repository.
