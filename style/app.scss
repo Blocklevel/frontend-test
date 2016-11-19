@@ -1,23 +1,13 @@
 @import '~normalize.css';
+@import './global/css-reset.scss';
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  font-size: 200.5%;
-}
-
 #app {
-  display: flex;
-  align-items: center;
-  align-content: center;
   width: 100vw;
   height: 100vh;
-  text-align: center;
-  background: #131526;
-
-  .content {
-    flex: 1;
-  }
+  background-color: #131526;
+  background-image: url(../asset/images/background-complete.png);
 }

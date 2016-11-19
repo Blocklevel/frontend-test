@@ -1,0 +1,29 @@
+// Dimensions
+$desktop-width-min: 1024px;
+$desktop-width-max: 1920px;
+$phone-width-min: 320px;
+$phone-width-max: 480px;
+$tablet-width-min: 768px;
+$tablet-width-max: 1024px;
+
+$mobile-view: '(max-width: #{$tablet-width-min - 1})';
+$tablet-view: '(min-width: #{$tablet-width-min}) and (max-width: #{$tablet-width-max})';
+$desktop-view: '(min-width: #{$tablet-width-max + 1})';
+
+@mixin mobile {
+  @media #{$mobile-view} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$tablet-view} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$desktop-view} {
+    @content;
+  }
+}
