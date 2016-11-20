@@ -11,7 +11,7 @@
 #app {
   width: 100%;
   background-color: #131526;
-  background-image: url(../asset/images/background-complete.png);
+  // background-image: url(../asset/images/background-complete.png);
   background-attachment: fixed;
   color: $primary-color;
 }
@@ -22,14 +22,19 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    z-index: 1;
+    pointer-events: none;
     width: 100%;
     height: 100vh;
     padding: $grid-gap;
 
     #logo {
         align-self: center;
+        @include grid(2);
     }
     menu {
+        @include grid(2);
+        pointer-events: all;
         tr {
             color: $secondary-color;
             &:hover {
@@ -42,10 +47,11 @@
         }
     }
     footer {
-        width: 100%;
         display: flex;
         justify-content: space-between;
+        @include grid(12);
         font-size: 50%;
+
         #accounts {
             float:right;
             img {
@@ -56,12 +62,50 @@
     }
 }
 
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 500vh;
+  }
+
+  #layer-back {
+      background-image: url(../asset/images/background-stars-light.png);
+      transform: translateZ(-7px) scale(8);
+  }
+
+  #layer-middle {
+      background-image: url(../asset/images/background-stars-dark.png);
+      transform: translateZ(-5px) scale(6);
+  }
+
+  #layer-front {
+      background-image: url(../asset/images/background-stars-grey.png);
+      transform: translateZ(-3px) scale(4);
+  }
+}
+
+
 #content {
     section {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        &:first-child > * {
+            background: red;
+            @include grid(3);
+        }
+        &:target {
+            background: green;
+        }
     }
     #thanks p {
         display: block;
