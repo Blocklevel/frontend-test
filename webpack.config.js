@@ -20,6 +20,10 @@ module.exports = {
             'file?hash=sha512&digest=hex&name=[hash].[ext]',
             'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
           ]
+      },
+      {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          loader: 'file?hash=sha512&digest=hex&name=[hash].[ext]'
       }
     ]
   }

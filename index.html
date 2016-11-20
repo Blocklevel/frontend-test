@@ -12,44 +12,78 @@
 
 <body>
     <div id="app">
-        <article class="fixed">
-            <img src="asset/images/logo.png">
+<!-- todo: create all html in app.js-->
+<!-- split html in comprehensive parts and make a component file for each -->
+
+        <article id="fixed">
+            <img id="logo" src="asset/images/logo.png">
+            <menu>
+                <table>
+                        <tr>
+<!-- todo: navigation text should be numbered and put in td automatically -->
+                            <td> 01 </td>
+                            <td> Home </td>
+                        </tr>
+                    </a>
+                    <tr>
+                        <td> 02 </td>
+                        <td> About </td>
+                    </tr>
+                    <tr>
+                        <td> 03 </td>
+                        <td> Work </td>
+                    </tr>
+                    <tr>
+                        <td> 04 </td>
+                        <td> Contact </td>
+                    </tr>
+                </table>
+            </menu>
+            <footer>
+                <p id="copyright" class="text-main"> &copy; 2016 - ALL RIGHTS RESERVED </p>
+                <div id="accounts">
+                    <img src="asset/images/logo-facebook.png">
+                    <img src="asset/images/logo-twitter.png">
+                    <img src="asset/images/logo-instagram.png">
+                </div>
+            </footer>
         </article>
 
-        <article class="content">
+        <article id="content">
             <section>
                 <img src="asset/images/wordmark.png">
-                <p class="text-main"> Wrewvg </p>
-                <pre class="text-second">
-                  egetg
-                  e3he
-                  46nje
-                  5juhe57
-                  j
-                  t5j
-                  e57j57ej
-                  4e5j54
-                </pre>
+                <div>
+                    <p class="text-main"> Wrewvg </p>
+                    <div class="text-second">
+                        <p> Lorem ipsum dolor sit amet.</p>
+                        <p> Consectetur adipiscing elit.</p>
+                        <p> Proin sit amet dolor.</p>
+                    </div>
+                    </pre>
+                </div>
             </section>
             <section>
-                <img src="asset/images/wordmark.png">
-                <p class="text-main"> Rrtebe </p>
-                <pre class="text-second">
-                  egetg
-                  e3he
-                  46nje
-                  5juhe57
-                  j
-                  t5j
-                  e57j57ej
-                  4e5j54
-                </pre>
+                <div>
+                    <p class="text-main"> Rrtebe </p>
+                    <img src="asset/images/wordmark.png">
+                    <div class="text-second">
+                        <p> Lorem ipsum dolor sit amet.</p>
+                        <p> Consectetur adipiscing elit.</p>
+                        <p> Proin sit amet dolor.</p>
+                    </div>
+                </div>
             </section>
             <section>
                 <img src="asset/images/wordmark.png">
             </section>
             <section>
                 <img src="asset/images/wordmark.png">
+            </section>
+            <section id="thanks">
+                <div>
+                    <p> THANK </p>
+                    <p> YOU </p>
+                </div>
             </section>
         </article>
     </div>
