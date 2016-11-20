@@ -1,14 +1,15 @@
 @mixin row() {
-  font-size: 0;
+    display: block;
+    // font-size: 0;
 }
 
-@mixin grid($nr-of-cols, $gap-percentage) {
-    width: percentage(1-($nr-of-cols*$gap-percentage/100)/$nr-of-cols);
-    align: top;
-    font-size: 16px;
-    display: inline-block;
+@mixin grid($nr-of-cols) {
+    // display: inline-block //or inline-flex
     box-sizing: border-box;
-    padding: 40px percentage($gap-percentage/200);
+    width: percentage($nr-of-cols/12);
+    padding: $grid-gap;
+    // align: top;
+
     // @media only screen and (min-width: 768px) {
     //     width: percentage(100/$nr-of-cols);
     //     vertical-align: top;
