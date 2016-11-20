@@ -1,13 +1,72 @@
 @import '~normalize.css';
 @import './global/css-reset.scss';
+@import './global/font-styles.scss';
+@import './global/variables.scss';
+@import './global/mixins.scss';
 
 * {
   box-sizing: border-box;
 }
 
 #app {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   background-color: #131526;
   background-image: url(../asset/images/background-complete.png);
+  background-attachment: fixed;
+  color: $primary-color;
+}
+
+#fixed{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    padding: $grid-gap;
+
+    #logo {
+        align-self: center;
+    }
+    menu {
+        tr {
+            color: $secondary-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        td {
+            padding: 8px 15px 8px 0;
+            font-size: 70%;
+        }
+    }
+    footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 50%;
+        #accounts {
+            float:right;
+            img {
+                height: 50%;
+                padding: 0 5px;
+            }
+        }
+    }
+}
+
+#content {
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #thanks p {
+        display: block;
+        text-align: center;
+        font-size: 12vw;
+        font-family: BrandonGrotesque-Regular;
+    }
 }
