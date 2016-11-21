@@ -4,22 +4,111 @@
 <!--[if IE 9]><html class="no-js lt-ie10"><![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <title>Frontend test</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <title>Frontend test</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
 </head>
-<body>
-  <div id="app">
-    <article class="content">
-      <h1>Good luck!</h1>
-      <img src="asset/image/mind-blown.gif">
-      <h2>Blow our minds!</h2>
 
-      <h3>Here is some music to get you in the mood:</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/GGXzlRoNtHU" frameborder="0" allowfullscreen></iframe>
-    </article>
-  </div>
-  <script src="bundle.js"></script>
+<body>
+    <div id="app">
+<!-- todo: create all html in app.js-->
+<!-- split html in comprehensive parts and make a component file for each -->
+
+        <article id="fixed">
+            <img id="logo" src="asset/images/logo.png">
+            <nav id="menu">
+                <table>
+                    <tr id="nav-Home" class="active">
+<!-- todo: navigation text should be numbered and put in td automatically -->
+                        <td> 01 </td>
+                        <td> Home </td>
+                    </tr>
+                    <tr id="nav-About">
+                        <td> 02 </td>
+                        <td> About </td>
+                    </tr>
+                    <tr id="nav-Work">
+                        <td> 03 </td>
+                        <td> Work </td>
+                    </tr>
+                    <tr id="nav-Contact">
+                        <td> 04 </td>
+                        <td> Contact </td>
+                    </tr>
+                </table>
+            </nav>
+
+            <footer class="row">
+                <p id="copyright" class="text-main"> &copy; 2016 - ALL RIGHTS RESERVED </p>
+                <div id="accounts">
+                    <img src="asset/images/logo-facebook.png">
+                    <img src="asset/images/logo-twitter.png">
+                    <img src="asset/images/logo-instagram.png">
+                </div>
+            </footer>
+        </article>
+
+        <div id="parallax">
+            <div id="layer-back" class="layer"> </div>
+            <div id="layer-middle" class="layer"> </div>
+            <div id="layer-front" class="layer"> </div>
+            <article id="content" class="layer">
+                <section id="welcome">
+                    <div class="row">
+                        <img src="asset/images/wordmark.png">
+                        <div>
+                            <h2> WELCOME TO </h2>
+                            <h1> BLOCKLEVEL </h1>
+                            <div class="text-second">
+                                <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                                    Proin eleifend molestie porttitor. Donec sit amet nunc odio.
+                                    Ut neque metus, semper non semper at, malesuada a nisl.
+                                </p>
+                            </div>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <section id="about">
+                    <div>
+                        <span>
+                            <h2 id="special-heading"> LET US TELL YOU MORE </h2>
+                            <h1 id="special-heading"> ABOUT BLOCKLEVEL </h1>
+                            <div class="text-second">
+                                <p> Phasellus id rutrum lorem. Nam in erat ex. Nam lacinia arcu non tortor lacinia maximus.
+                                    Ut lobortis, tellus in laoreet tristique, urna neque cursus dui, eget scelerisque libero massa ac urna.
+                                    Sed cursus sed massa nec posuere. Etiam nec nibh dictum, tempus diam eget, faucibus ipsum.
+                                    Mauris auctor elit lacinia nulla auctor elementum.
+                                </p>
+                            </div>
+                            <button> Read more </button>
+                        </span>
+                    </div>
+                </section>
+                <section id="work">
+                    <div>
+                        <h1 id="special-heading"> WORK </h1>
+                        <img src="asset/images/project.png">
+                    </div>
+                </section>
+                <section id="contact">
+                    <div>
+                        <h1 id="special-heading"> CONTACT </h1>
+                        <input type="text" placeholder="name" required>
+                        <input type=" text" placeholder="email-address" required>
+                        <img src="asset/images/wordmark.png">
+                    </div>
+                </section>
+                <section id="thanks">
+                    <div>
+                        <p> THANK </p>
+                        <p> YOU </p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
 </body>
 </html>

@@ -1,22 +1,188 @@
 @import '~normalize.css';
+@import './global/css-reset.scss';
+@import './global/font-styles.scss';
+@import './global/variables.scss';
+@import './global/responsive.scss';
+@import './global/mixins.scss';
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
 }
 
-html {
-  font-size: 62.5%;
+h1 {
+    font: bolder 20px/25px BrandonGrotesque-Black, arial, sans-serif;
+}
+
+h2 {
+    font-size: 15px;
+    line-height: 15px;
+}
+
+p {
+    font: 8px arial, sans-serif;
+    padding: 20px 0;
+}
+
+input {
+    background: none;
+    font: 10px arial, sans-serif;
+}
+
+button {
+    @include button;
+}
+
+.row {
+    @include row;
 }
 
 #app {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
+  width: 100%;
+  background-color: #131526;
+  // background-image: url(../asset/images/background-complete.png);
+  background-attachment: fixed;
+  font-family: BrandonGrotesque-Regular;
+  color: $primary-color;
+}
 
-  .content {
-    flex: 1;
-  }
+#fixed{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 1;
+    pointer-events: none;
+    width: 100%;
+    height: 100vh;
+    padding: $gutter;
+
+    #logo {
+        align-self: center;
+        @include fixed-grid(2);
+        pointer-events: all; //TESTING
+    }
+    nav {
+        pointer-events: all; //TESTING
+        @include fixed-grid(2);
+        pointer-events: all;
+        & .active {
+            color: $primary-color;
+        }
+        tr {width:100vw;
+            color: $secondary-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        td {
+            padding: 6px 12px 6px 0;
+            font-size: 70%;
+        }
+    }
+    footer {
+        pointer-events: all; //TESTING
+        // display: flex;
+        // justify-content: space-between;
+        @include grid(12);
+        font-size: 50%;
+
+        #accounts {
+            height: 100%;
+            // width: auto;
+            float: right;
+            img {
+                height: 10px;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+#parallax {
+    position:relative;
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 500vh;
+    }
+
+    #layer-back {
+        background-image: url(../asset/images/background-stars-light.png);
+        transform: translateZ(-7px) scale(8);
+    }
+
+    #layer-middle {
+        background-image: url(../asset/images/background-stars-dark.png);
+        transform: translateZ(-5px) scale(6);
+    }
+
+    #layer-front {
+        background-image: url(../asset/images/background-stars-grey.png);
+        transform: translateZ(-3px) scale(4);
+    }
+}
+
+
+#content {
+    transition: top 2s;
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include grid(6);
+            @media (min-width: 800px) and (orientation: landscape) {
+                @include fixed-grid(6, 1200px);
+            }
+        }
+    }
+
+    #welcome > div {
+        flex-direction: column-reverse;
+        @media (min-width: 800px) and (orientation: landscape) {
+            flex-direction: row;
+        }
+        & > * {
+            @include grid(12);
+            @media (min-width: 800px) and (orientation: landscape) {
+                @include grid(6);
+            }
+        }
+    }
+
+    #about > div {
+        & h2 {color: #f2c230}
+        & button {
+            background: #e64c2e;
+            &:hover {
+                background: #f2c230;
+            }
+        }
+        & > * {
+            text-align: center;
+            @include grid(8);
+        }
+    }
+
+    #work > div > img { width: 100%}
+
+    #thanks p {
+        display: block;
+        text-align: center;
+        font: 900 14vw/14vw BrandonGrotesque-Black, arial, sans-serif;
+    }
 }
