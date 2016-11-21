@@ -19,21 +19,20 @@
             <img id="logo" src="asset/images/logo.png">
             <nav id="menu">
                 <table>
-                        <tr>
+                    <tr id="nav-Home" class="active">
 <!-- todo: navigation text should be numbered and put in td automatically -->
-                            <td> 01 </td>
-                            <td> Home </td>
-                        </tr>
-                    </a>
-                    <tr>
+                        <td> 01 </td>
+                        <td> Home </td>
+                    </tr>
+                    <tr id="nav-About">
                         <td> 02 </td>
                         <td> About </td>
                     </tr>
-                    <tr>
+                    <tr id="nav-Work">
                         <td> 03 </td>
                         <td> Work </td>
                     </tr>
-                    <tr>
+                    <tr id="nav-Contact">
                         <td> 04 </td>
                         <td> Contact </td>
                     </tr>
@@ -50,7 +49,7 @@
             </footer>
         </article>
 
-        <div class="parallax">
+        <div id="parallax">
             <div id="layer-back" class="layer"> </div>
             <div id="layer-middle" class="layer"> </div>
             <div id="layer-front" class="layer"> </div>
@@ -59,11 +58,13 @@
                     <div class="row">
                         <img src="asset/images/wordmark.png">
                         <div>
-                            <p class="text-main"> Wrewvg </p>
+                            <h2> WELCOME TO </h2>
+                            <h1> BLOCKLEVEL </h1>
                             <div class="text-second">
-                                <p> Lorem ipsum dolor sit amet.</p>
-                                <p> Consectetur adipiscing elit.</p>
-                                <p> Proin sit amet dolor.</p>
+                                <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                                    Proin eleifend molestie porttitor. Donec sit amet nunc odio.
+                                    Ut neque metus, semper non semper at, malesuada a nisl.
+                                </p>
                             </div>
                             </pre>
                         </div>
@@ -71,19 +72,33 @@
                 </section>
                 <section id="about">
                     <div>
-                        <p class="text-main"> Rrtebe </p>
-                        <div class="text-second">
-                            <p> Lorem ipsum dolor sit amet.</p>
-                            <p> Consectetur adipiscing elit.</p>
-                            <p> Proin sit amet dolor.</p>
-                        </div>
+                        <span>
+                            <h2 id="special-heading"> LET US TELL YOU MORE </h2>
+                            <h1 id="special-heading"> ABOUT BLOCKLEVEL </h1>
+                            <div class="text-second">
+                                <p> Phasellus id rutrum lorem. Nam in erat ex. Nam lacinia arcu non tortor lacinia maximus.
+                                    Ut lobortis, tellus in laoreet tristique, urna neque cursus dui, eget scelerisque libero massa ac urna.
+                                    Sed cursus sed massa nec posuere. Etiam nec nibh dictum, tempus diam eget, faucibus ipsum.
+                                    Mauris auctor elit lacinia nulla auctor elementum.
+                                </p>
+                            </div>
+                            <button> Read more </button>
+                        </span>
                     </div>
                 </section>
                 <section id="work">
-                    <img src="asset/images/wordmark.png">
+                    <div>
+                        <h1 id="special-heading"> WORK </h1>
+                        <img src="asset/images/project.png">
+                    </div>
                 </section>
                 <section id="contact">
-                    <img src="asset/images/wordmark.png">
+                    <div>
+                        <h1 id="special-heading"> CONTACT </h1>
+                        <input type="text" placeholder="name" required>
+                        <input type=" text" placeholder="email-address" required>
+                        <img src="asset/images/wordmark.png">
+                    </div>
                 </section>
                 <section id="thanks">
                     <div>

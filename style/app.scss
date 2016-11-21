@@ -10,6 +10,29 @@
     outline: none;
 }
 
+h1 {
+    font: bolder 20px/25px BrandonGrotesque-Black, arial, sans-serif;
+}
+
+h2 {
+    font-size: 15px;
+    line-height: 15px;
+}
+
+p {
+    font: 8px arial, sans-serif;
+    padding: 20px 0;
+}
+
+input {
+    background: none;
+    font: 10px arial, sans-serif;
+}
+
+button {
+    @include button;
+}
+
 .row {
     @include row;
 }
@@ -44,6 +67,9 @@
         pointer-events: all; //TESTING
         @include fixed-grid(2);
         pointer-events: all;
+        & .active {
+            color: $primary-color;
+        }
         tr {width:100vw;
             color: $secondary-color;
             &:hover {
@@ -74,7 +100,8 @@
     }
 }
 
-.parallax {
+#parallax {
+    position:relative;
     perspective: 1px;
     height: 100vh;
     overflow-x: hidden;
@@ -106,6 +133,7 @@
 
 
 #content {
+    transition: top 2s;
     section {
         display: flex;
         justify-content: center;
@@ -116,7 +144,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: blue;   //TESTING
             @include grid(6);
             @media (min-width: 800px) and (orientation: landscape) {
                 @include fixed-grid(6, 1200px);
@@ -125,11 +152,11 @@
     }
 
     #welcome > div {
+        flex-direction: column-reverse;
         @media (min-width: 800px) and (orientation: landscape) {
             flex-direction: row;
         }
         & > * {
-            background: red;    //TESTING
             @include grid(12);
             @media (min-width: 800px) and (orientation: landscape) {
                 @include grid(6);
@@ -137,9 +164,21 @@
         }
     }
 
-    #about > div > * {
-        @include grid(8);
+    #about > div {
+        & h2 {color: #f2c230}
+        & button {
+            background: #e64c2e;
+            &:hover {
+                background: #f2c230;
+            }
+        }
+        & > * {
+            text-align: center;
+            @include grid(8);
+        }
     }
+
+    #work > div > img { width: 100%}
 
     #thanks p {
         display: block;

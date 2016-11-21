@@ -28,3 +28,11 @@
         }
 
 }
+
+@mixin button {
+    width: 100px;
+    height: 20px;
+    font: 8px arial, sans-serif;
+    color: white;
+    background: none;
+}
