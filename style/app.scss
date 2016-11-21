@@ -2,10 +2,16 @@
 @import './global/css-reset.scss';
 @import './global/font-styles.scss';
 @import './global/variables.scss';
+@import './global/responsive.scss';
 @import './global/mixins.scss';
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.row {
+    @include row;
 }
 
 #app {
@@ -13,6 +19,7 @@
   background-color: #131526;
   // background-image: url(../asset/images/background-complete.png);
   background-attachment: fixed;
+  font-family: BrandonGrotesque-Regular;
   color: $primary-color;
 }
 
@@ -26,70 +33,75 @@
     pointer-events: none;
     width: 100%;
     height: 100vh;
-    padding: $grid-gap;
+    padding: $gutter;
 
     #logo {
         align-self: center;
-        @include grid(2);
+        @include fixed-grid(2);
+        pointer-events: all; //TESTING
     }
-    menu {
-        @include grid(2);
+    nav {
+        pointer-events: all; //TESTING
+        @include fixed-grid(2);
         pointer-events: all;
-        tr {
+        tr {width:100vw;
             color: $secondary-color;
             &:hover {
                 color: $primary-color;
             }
         }
         td {
-            padding: 8px 15px 8px 0;
+            padding: 6px 12px 6px 0;
             font-size: 70%;
         }
     }
     footer {
-        display: flex;
-        justify-content: space-between;
+        pointer-events: all; //TESTING
+        // display: flex;
+        // justify-content: space-between;
         @include grid(12);
         font-size: 50%;
 
         #accounts {
-            float:right;
+            height: 100%;
+            // width: auto;
+            float: right;
             img {
-                height: 50%;
-                padding: 0 5px;
+                height: 10px;
+                padding-left: 10px;
             }
         }
     }
 }
 
 .parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-  .layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 500vh;
-  }
+    .layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 500vh;
+    }
 
-  #layer-back {
-      background-image: url(../asset/images/background-stars-light.png);
-      transform: translateZ(-7px) scale(8);
-  }
+    #layer-back {
+        background-image: url(../asset/images/background-stars-light.png);
+        transform: translateZ(-7px) scale(8);
+    }
 
-  #layer-middle {
-      background-image: url(../asset/images/background-stars-dark.png);
-      transform: translateZ(-5px) scale(6);
-  }
+    #layer-middle {
+        background-image: url(../asset/images/background-stars-dark.png);
+        transform: translateZ(-5px) scale(6);
+    }
 
-  #layer-front {
-      background-image: url(../asset/images/background-stars-grey.png);
-      transform: translateZ(-3px) scale(4);
-  }
+    #layer-front {
+        background-image: url(../asset/images/background-stars-grey.png);
+        transform: translateZ(-3px) scale(4);
+    }
 }
 
 
@@ -99,18 +111,39 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        &:first-child > * {
-            background: red;
-            @include grid(3);
-        }
-        &:target {
-            background: green;
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: blue;   //TESTING
+            @include grid(6);
+            @media (min-width: 800px) and (orientation: landscape) {
+                @include fixed-grid(6, 1200px);
+            }
         }
     }
+
+    #welcome > div {
+        @media (min-width: 800px) and (orientation: landscape) {
+            flex-direction: row;
+        }
+        & > * {
+            background: red;    //TESTING
+            @include grid(12);
+            @media (min-width: 800px) and (orientation: landscape) {
+                @include grid(6);
+            }
+        }
+    }
+
+    #about > div > * {
+        @include grid(8);
+    }
+
     #thanks p {
         display: block;
         text-align: center;
-        font-size: 12vw;
-        font-family: BrandonGrotesque-Regular;
+        font: 900 14vw/14vw BrandonGrotesque-Black, arial, sans-serif;
     }
 }

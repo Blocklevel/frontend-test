@@ -1,17 +1,30 @@
 @mixin row() {
     display: block;
+    & > * {
+        display: inline-block;
+    }
     // font-size: 0;
 }
 
+// for giving elements a width based on a 12 column grid:
 @mixin grid($nr-of-cols) {
-    // display: inline-block //or inline-flex
-    box-sizing: border-box;
-    width: percentage($nr-of-cols/12);
-    padding: $grid-gap;
+    // box-sizing: border-box;
+    width: percentage($nr-of-cols/12) - 0.5*$gutter;
+    padding: $gutter;
+    & > * {
+        width: auto;
+    }
     // align: top;
+}
 
-    // @media only screen and (min-width: 768px) {
-    //     width: percentage(100/$nr-of-cols);
-    //     vertical-align: top;
-    // }
+// this mixin is for giving elements a fixed width based on an absolute column size, i.e. 1/12 of a specific screen size (the norm screen width)
+// the elements will keep this fixed width in other screen sizes.
+@mixin fixed-grid($nr-of-cols, $norm-screen-width: $norm-screen-width) {
+        // box-sizing: border-box;
+        width: $nr-of-cols * $norm-screen-width/12 - 0.5*$fixed-gutter;
+        padding: $fixed-gutter;
+        & > * {
+            width: auto;
+        }
+
 }
